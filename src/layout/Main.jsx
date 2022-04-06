@@ -17,7 +17,7 @@ class Main extends React.Component {
     };
 
     getSearchString = (search, type, page) => {
-        let apiAddress = `http://www.omdbapi.com/?apikey=${API_KEY}`;
+        let apiAddress = `https://www.omdbapi.com/?apikey=${API_KEY}`;
 
         if (search !== '') {
             apiAddress += '&s=' + search;
@@ -45,6 +45,10 @@ class Main extends React.Component {
                     loading: false,
                     pagesNumber: Math.ceil(Number(response.totalResults)/10) 
                 });
+            })
+            .catch((err) => {
+                console.error(err);
+                this.setState({loading: false});
             })
     }
 
