@@ -4,9 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const isLoading = true;
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App isLoading={isLoading}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
